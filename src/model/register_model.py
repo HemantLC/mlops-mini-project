@@ -63,7 +63,8 @@ def register_model_local(model_name: str, model_info: dict):
     """Register the model to the MLflow Model Registry."""
     try:
         #model_uri = f"runs:/{model_info['run_id']}/{model_info['model_path']}"
-        model_uri = f"models:/{model_info['model_id']}"
+        #model_uri = f"models:/{model_info['model_id']}"
+        model_uri = model_info['model_uri']
         
         # Register the model
         model_version = mlflow.register_model(model_uri=model_uri, name = model_name)
@@ -86,7 +87,6 @@ def main():
         model_info_path = 'reports/experiment_info.json'
         model_info = load_model_info(model_info_path)
         model_name = "my_model"
-        #model_id = model_info[model_id]
         register_model_local(model_name, model_info)
     except Exception as e:
         logger.error('Failed to complete the model registration process: %s', e)
