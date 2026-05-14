@@ -39,18 +39,18 @@ logger.setLevel('DEBUG')
 console_handler = logging.StreamHandler()
 console_handler.setLevel('DEBUG')
 
-#formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-#console_handler.setFormatter(formatter)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+console_handler.setFormatter(formatter)
 
-#file_handler = logging.FileHandler('model_evaluation_errors.log')
-#file_handler.setLevel('ERROR')
+file_handler = logging.FileHandler('model_evaluation_errors.log')
+file_handler.setLevel('ERROR')
 
-#logger.addHandler(console_handler)
-#logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
 
 
 
-#file_handler.setFormatter(formatter)
+file_handler.setFormatter(formatter)
 
 
 
