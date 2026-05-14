@@ -47,6 +47,7 @@ class TestModelLoading(unittest.TestCase):
 
     def test_model_loaded_properly(self):
         self.assertIsNotNone(self.new_model)
+        
 
 
 if __name__ == "__main__":
