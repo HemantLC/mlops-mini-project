@@ -16,7 +16,7 @@ vectoriser = pickle.load(open('models/vectorizer.pkl', 'rb'))
 
 # Load model from model registry
 model_name = 'my_model'
-model_version = 2
+model_version = 1
 
 model_uri = f"models:/{model_name}/{model_version}"
 model = mlflow.pyfunc.load_model(model_uri)
@@ -31,14 +31,20 @@ def predict():
 
     # clean
     text = normalize_text(text)
+    print(text)
+    print('***************************')
 
     # BOW
     features = vectoriser.transform([text])
+    print(features)
+    print('**************************')
     
 
 
     # Prediction
     result = model.predict(features)
+    print(result)
+    print('**************************')
     
 
     # Show
