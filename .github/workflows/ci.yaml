@@ -57,7 +57,7 @@ jobs:
       
       - name: Tage docker image
         run: |
-          docker tag hemantmlops_ecr: latest 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemant_mlops_ecr:latest
+          docker tag hemant_mlops_ecr:latest 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemant_mlops_ecr:latest
 
       - name: push docker image to AWS ECR
         run: |
