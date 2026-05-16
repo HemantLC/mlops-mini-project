@@ -44,3 +44,20 @@ jobs:
         env:
           DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
         run: python -m unittest tests/test_flask_app.py
+      
+      - name: Log in to Docker Hub
+        if: sucess()
+        uses: docker/login-action@v2
+        with:
+          username: ${{secerets.DOCKER_HUB_USERNAME}}
+          password: ${{secerets.DOCKER_HUB_ACCESS_TOKEN}}
+
+      - name: Build Docker Image
+        if: sucess()
+        run: |
+          docker build -t ${{secerets.DOCKER_HUB_USERNAME}}/emotion1:v1.2 .
+
+      - name: Push docker image to docker hub
+        if: sucess()
+        run: |
+          docker push ${{secerets.DOCKER_HUB_USERNAME}}/emotion1:v1.2
