@@ -53,12 +53,12 @@ jobs:
       
       - name: Docker build image 
         run: |
-          docker build -t hemantmlops_ecr .
+          docker build -t hemant_mlops_ecr .
       
       - name: Tage docker image
         run: |
-          docker tag hemantmlops_ecr:latest 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemantmlops_ecr:latest
+          docker tag hemant_mlops_ecr:latest 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemant_mlops_ecr:latest
 
       - name: push docker image to AWS ECR
         run: |
-          docker push 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemantmlops_ecr:latest
+          docker push 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemant_mlops_ecr:latest
