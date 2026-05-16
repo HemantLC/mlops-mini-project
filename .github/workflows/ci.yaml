@@ -61,4 +61,4 @@ jobs:
 
       - name: push docker image to AWS ECR
         run: |
-          docker push 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemant_mlops_ecr:latest
+          docker push 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemantmlops_ecr:latest
