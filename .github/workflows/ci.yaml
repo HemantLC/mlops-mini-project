@@ -79,4 +79,3 @@ jobs:
             docker stop my-app || true
             docker rm my-app || true
             docker run -p 80:5000 -e DAGSHUB_PAT=be0c767d3c000cb25850a1a59a1718697b6a3955 --name hemantmlops-container 586345694515.dkr.ecr.us-east-1.amazonaws.com/hemant_mlops_ecr:latest
-            
